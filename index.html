@@ -3,94 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ThermaViX - Embedded Medical Thermography System</title>
+    <title>ThermaViX - Medical Infrared Thermography</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        body {
+        * {
+            box-sizing: border-box;
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f7f9fb;
+            padding: 0;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #e0f7fa, #ffffff);
             color: #333;
+            line-height: 1.6;
         }
         header {
-            background: linear-gradient(90deg, #5f72be, #9b23ea);
+            background: #4f46e5;
             color: white;
-            padding: 50px 20px;
+            padding: 80px 20px;
             text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         header h1 {
-            margin: 0;
-            font-size: 48px;
+            font-size: 3rem;
+            margin-bottom: 20px;
         }
         header p {
-            font-size: 20px;
-            margin-top: 10px;
+            font-size: 1.2rem;
+            opacity: 0.9;
         }
         section {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+            text-align: center;
         }
-        h2 {
-            color: #5f72be;
-            margin-top: 0;
+        section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #4f46e5;
+        }
+        section p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        .cta-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 35px;
+            background: #4f46e5;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+        .cta-button:hover {
+            background: #4338ca;
         }
         footer {
+            background: #f0f0f0;
             text-align: center;
             padding: 20px;
-            background: #f0f0f0;
-            margin-top: 40px;
-        }
-        .button {
-            display: inline-block;
-            background: #9b23ea;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            margin-top: 20px;
-            transition: 0.3s;
-        }
-        .button:hover {
-            background: #7a1ac6;
+            color: #777;
+            margin-top: 60px;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>ThermaViX</h1>
-    <p>Advanced Embedded Medical Thermography System</p>
-</header>
+    <header>
+        <h1>ThermaViX</h1>
+        <p>Advanced Medical Infrared Thermography System</p>
+    </header>
 
-<section>
-    <h2>About ThermaViX</h2>
-    <p>ThermaViX is a cutting-edge embedded system developed for medical infrared thermography applications. 
-    It leverages advanced thermal imaging sensors to assist healthcare professionals in early diagnosis, monitoring, and treatment by providing accurate, non-invasive thermal scans.</p>
-</section>
+    <section>
+        <h2>About ThermaViX</h2>
+        <p>
+            ThermaViX is a cutting-edge embedded system designed to revolutionize medical diagnostics 
+            through non-invasive infrared thermography. Our technology allows early detection of various 
+            diseases such as vascular disorders, tumors, inflammation, and metabolic imbalances.
+        </p>
+        <p>
+            With real-time thermal imaging, high precision sensors, and advanced analytics, ThermaViX empowers 
+            healthcare professionals to make better clinical decisions and improve patient outcomes.
+        </p>
+        <a href="about.html" class="cta-button">Learn More</a>
 
-<section>
-    <h2>Why ThermaViX?</h2>
-    <ul>
-        <li>Accurate real-time thermal imaging</li>
-        <li>Non-contact medical diagnostics</li>
-        <li>Portable and embedded design</li>
-        <li>Cost-effective and easy to use</li>
-        <li>Applicable for vascular, oncological, and inflammation monitoring</li>
-    </ul>
-</section>
-
-<section>
-    <h2>Contact Us</h2>
-    <p>Have questions or want to collaborate? Feel free to reach out!</p>
-    <a class="button" href="mailto:info@thermavix.com">Email Us</a>
-</section>
-
-<footer>
-    &copy; 2025 ThermaViX. All rights reserved.
-</footer>
+    <footer>
+        &copy; 2025 ThermaViX Startup. All rights reserved.
+    </footer>
 
 </body>
 </html>
