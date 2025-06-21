@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ThermaViX - Diagnostic médical par technologie thermique</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Cairo', Arial, sans-serif;
+      background: #f7fafd;
+      color: #222;
+    }
+    .navbar {
+      background: #1a237e;
+    }
+    .navbar-brand, .nav-link, .navbar-nav .nav-link.active {
+      color: #fff !important;
+    }
+    .hero {
+      background: linear-gradient(120deg, #1976d2 70%, #e3f2fd 100%);
+      color: #fff;
+      padding: 70px 0 50px 0;
+      text-align: center;
+      border-radius: 0 0 40px 40px;
+      margin-bottom: 40px;
+    }
+    .hero .btn {
+      background: #fff;
+      color: #1976d2;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+    .hero .btn:hover {
+      background: #1565c0;
+      color: #fff;
+    }
+    .feature-icon {
+      font-size: 2.5rem;
+      color: #1976d2;
+      margin-bottom: 15px;
+    }
+    .section-title {
+      color: #1976d2;
+      font-weight: bold;
+      margin-bottom: 24px;
+    }
+    .about-section, .tech-section {
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 2px 8px #e4e7ec22;
+      padding: 32px 24px;
+      margin-bottom: 32px;
+    }
+    footer {
+      background: #1a237e;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0 10px 0;
+      margin-top: 40px;
+      border-radius: 30px 30px 0 0;
+    }
+    @media (max-width: 576px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">ThermaViX</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link" href="features.html">Fonctionnalités</a></li>
+        <li class="nav-item"><a class="nav-link" href="team.html">L'équipe</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">À propos de ThermaViX</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contactez-nous</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            Langue
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="index.html">العربية</a></li>
+            <li><a class="dropdown-item" href="index-en.html">English</a></li>
+            <li><a class="dropdown-item" href="index-fr.html">Français</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1 class="fw-bold mb-3">Technologie d'imagerie thermique médicale intelligente</h1>
+      <p class="mb-4">Découvrez comment ThermaViX révolutionne le diagnostic précoce grâce à l'imagerie thermique infrarouge.</p>
+      <a href="#about" class="btn btn-lg px-4">En savoir plus <i class="bi bi-arrow-left ms-2"></i></a>
+    </div>
+  </section>
+
+  <section id="about" class="container about-section">
+    <h2 class="section-title">Qu'est-ce que ThermaViX ?</h2>
+    <p>
+      <b>ThermaViX</b> est un appareil médical intelligent et portable basé sur la technologie d'imagerie thermique infrarouge.
+      Il permet la détection rapide, non invasive et sans contact des anomalies thermiques dans le corps humain. En intégrant une caméra thermique avancée avec une application logicielle alimentée par des algorithmes de vision par ordinateur, l'appareil aide au diagnostic précoce de conditions telles que les inflammations, les infections ou les troubles circulatoires avant même l'apparition des symptômes traditionnels.
+    </p>
+    <p>
+      <b>ThermaViX</b> se distingue par sa petite taille, son économie et sa facilité d'utilisation, ce qui en fait une solution innovante et pratique pour diverses institutions médicales, en particulier dans les zones à faibles ressources, où il permet de gagner un temps précieux, facilite le diagnostic immédiat et améliore la prévention sanitaire.
+    </p>
+  </section>
+
+  <section class="container tech-section">
+    <h2 class="section-title">Qu'est-ce que la thermographie infrarouge ?</h2>
+    <p>
+      La thermographie infrarouge est une technique qui utilise des caméras sensibles pour mesurer le rayonnement thermique émis par le corps et le convertir en une image thermique colorée. Cette technique permet de détecter de subtiles différences de température à la surface de la peau, qui peuvent indiquer la présence d'inflammations ou d'autres problèmes de santé.
+    </p>
+    <p>
+      Cette technologie a été inventée au début du 20e siècle et initialement utilisée à des fins militaires et industrielles, puis est entrée plus tard dans le domaine médical et a considérablement évolué avec l'avènement des caméras numériques et des processeurs intelligents.
+    </p>
+  </section>
+
+  <section class="container mb-5">
+    <h2 class="section-title text-center">Pourquoi ThermaViX ?</h2>
+    <div class="row text-center g-4">
+      <div class="col-md-4">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <div class="feature-icon"><i class="bi bi-lightning-charge-fill"></i></div>
+          <h5 class="fw-bold mb-2">Diagnostic instantané et précis</h5>
+          <p>Détection précoce des maladies thermiques grâce à l'intelligence artificielle et à une analyse thermique précise.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <div class="feature-icon"><i class="bi bi-shield-lock-fill"></i></div>
+          <h5 class="fw-bold mb-2">Sûr et non invasif</h5>
+          <p>Ne nécessite aucun contact avec le patient ni exposition à des radiations nocives, convient à tous, y compris aux enfants.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <div class="feature-icon"><i class="bi bi-people-fill"></i></div>
+          <h5 class="fw-bold mb-2">Solution économique et pratique</h5>
+          <p>Un appareil petit et facile à transporter, à des prix abordables, idéal pour les hôpitaux, les cliniques et les zones reculées.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="mb-2">
+        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-white me-3"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="text-white"><i class="bi bi-envelope-fill"></i></a>
+      </div>
+      <div>Tous droits réservés &copy; ThermaViX 2025</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
