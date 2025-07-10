@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThermaViX Viewer - Professional Thermal Imaging Software</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .software-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .software-info {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .software-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ffd93d;
+        }
+
+        .software-info p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .download-section {
+            background: rgba(255,255,255,0.15);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255,107,107,0.3);
+        }
+
+        .download-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .info-item {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+
+        .info-item h4 {
+            color: #ffd93d;
+            margin-bottom: 10px;
+        }
+
+        .software-preview {
+            position: relative;
+        }
+
+        .preview-screen {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(45deg, #2c3e50, #34495e);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid rgba(255,255,255,0.2);
+        }
+
+        .thermal-display {
+            width: 80%;
+            height: 80%;
+            background: linear-gradient(45deg, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff);
+            border-radius: 10px;
+            position: relative;
+            animation: thermalPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes thermalPulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #ffd93d;
+        }
+
+        .feature-card p {
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .requirements {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .requirements h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #ffd93d;
+            text-align: center;
+        }
+
+        .req-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .req-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .req-item h4 {
+            color: #ffd93d;
+            margin-bottom: 10px;
+        }
+
+        .language-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .language-selector select {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 10px 15px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .language-selector select option {
+            background: #2c3e50;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .software-showcase {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="language-selector">
+        <select onchange="changeLanguage(this.value)">
+            <option value="en">English</option>
+            <option value="ar">العربية</option>
+            <option value="fr">Français</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1 id="main-title">ThermaViX Viewer</h1>
+            <p id="main-subtitle">Professional Desktop Software for High-Resolution Thermal Imaging Analysis</p>
+        </div>
+
+        <div class="software-showcase">
+            <div class="software-info">
+                <h2 id="software-title">Advanced Thermal Imaging Software</h2>
+                <p id="software-description">
+                    ThermaViX Viewer is a powerful desktop application designed to provide high-resolution thermal image analysis with superior clarity compared to device screens. Monitor thermal variations in real-time with professional-grade precision.
+                </p>
+                
+                <div class="download-section">
+                    <a href="#" class="download-btn">
+                        <span>📥</span>
+                        <span id="download-text">Download Now</span>
+                    </a>
+                    <div class="download-info">
+                        <div class="info-item">
+                            <h4 id="version-text">Version</h4>
+                            <p>1.0.0</p>
+                        </div>
+                        <div class="info-item">
+                            <h4 id="size-text">File Size</h4>
+                            <p>90 MB</p>
+                        </div>
+                        <div class="info-item">
+                            <h4 id="platform-text">Platform</h4>
+                            <p>Windows</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="software-preview">
+                <div class="preview-screen">
+                    <div class="thermal-display"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🖥️</div>
+                <h3 id="feature1-title">High-Resolution Display</h3>
+                <p id="feature1-desc">Experience thermal imaging with exceptional clarity and detail, far superior to small device screens. Perfect for professional analysis and monitoring.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💾</div>
+                <h3 id="feature2-title">Save & Export</h3>
+                <p id="feature2-desc">Save thermal images and videos with ease. Export your data in multiple formats for documentation and further analysis.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3 id="feature3-title">Report Generation</h3>
+                <p id="feature3-desc">Generate comprehensive reports with thermal analysis data. Perfect for medical documentation and professional presentations.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h3 id="feature4-title">Real-Time Monitoring</h3>
+                <p id="feature4-desc">Monitor thermal variations in real-time with smooth performance and accurate temperature readings for immediate analysis.</p>
+            </div>
+        </div>
+
+        <div class="requirements">
+            <h2 id="requirements-title">System Requirements</h2>
+            <div class="req-grid">
+                <div class="req-item">
+                    <h4 id="os-text">Operating System</h4>
+                    <p>Windows 10/11 (64-bit)</p>
+                </div>
+                <div class="req-item">
+                    <h4 id="processor-text">Processor</h4>
+                    <p>Intel Core i3 or equivalent</p>
+                </div>
+                <div class="req-item">
+                    <h4 id="memory-text">Memory</h4>
+                    <p>4 GB RAM minimum</p>
+                </div>
+                <div class="req-item">
+                    <h4 id="storage-text">Storage</h4>
+                    <p>500 MB available space</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const translations = {
+            en: {
+                'main-title': 'ThermaViX Viewer',
+                'main-subtitle': 'Professional Desktop Software for High-Resolution Thermal Imaging Analysis',
+                'software-title': 'Advanced Thermal Imaging Software',
+                'software-description': 'ThermaViX Viewer is a powerful desktop application designed to provide high-resolution thermal image analysis with superior clarity compared to device screens. Monitor thermal variations in real-time with professional-grade precision.',
+                'download-text': 'Download Now',
+                'version-text': 'Version',
+                'size-text': 'File Size',
+                'platform-text': 'Platform',
+                'feature1-title': 'High-Resolution Display',
+                'feature1-desc': 'Experience thermal imaging with exceptional clarity and detail, far superior to small device screens. Perfect for professional analysis and monitoring.',
+                'feature2-title': 'Save & Export',
+                'feature2-desc': 'Save thermal images and videos with ease. Export your data in multiple formats for documentation and further analysis.',
+                'feature3-title': 'Report Generation',
+                'feature3-desc': 'Generate comprehensive reports with thermal analysis data. Perfect for medical documentation and professional presentations.',
+                'feature4-title': 'Real-Time Monitoring',
+                'feature4-desc': 'Monitor thermal variations in real-time with smooth performance and accurate temperature readings for immediate analysis.',
+                'requirements-title': 'System Requirements',
+                'os-text': 'Operating System',
+                'processor-text': 'Processor',
+                'memory-text': 'Memory',
+                'storage-text': 'Storage'
+            },
+            ar: {
+                'main-title': 'ThermaViX Viewer',
+                'main-subtitle': 'برنامج سطح المكتب المهني لتحليل التصوير الحراري عالي الدقة',
+                'software-title': 'برنامج التصوير الحراري المتقدم',
+                'software-description': 'ThermaViX Viewer هو تطبيق سطح مكتب قوي مصمم لتوفير تحليل الصور الحرارية عالية الدقة بوضوح فائق مقارنة بشاشات الأجهزة. راقب التغيرات الحرارية في الوقت الفعلي بدقة احترافية.',
+                'download-text': 'تحميل الآن',
+                'version-text': 'الإصدار',
+                'size-text': 'حجم الملف',
+                'platform-text': 'النظام',
+                'feature1-title': 'عرض عالي الدقة',
+                'feature1-desc': 'استمتع بالتصوير الحراري بوضوح وتفاصيل استثنائية، أفضل بكثير من شاشات الأجهزة الصغيرة. مثالي للتحليل والمراقبة المهنية.',
+                'feature2-title': 'حفظ وتصدير',
+                'feature2-desc': 'احفظ الصور الحرارية ومقاطع الفيديو بسهولة. صدّر بياناتك بتنسيقات متعددة للتوثيق والتحليل الإضافي.',
+                'feature3-title': 'إنتاج التقارير',
+                'feature3-desc': 'أنشئ تقارير شاملة مع بيانات التحليل الحراري. مثالي للتوثيق الطبي والعروض التقديمية المهنية.',
+                'feature4-title': 'المراقبة في الوقت الفعلي',
+                'feature4-desc': 'راقب التغيرات الحرارية في الوقت الفعلي مع أداء سلس وقراءات دقيقة لدرجة الحرارة للتحليل الفوري.',
+                'requirements-title': 'متطلبات النظام',
+                'os-text': 'نظام التشغيل',
+                'processor-text': 'المعالج',
+                'memory-text': 'الذاكرة',
+                'storage-text': 'التخزين'
+            },
+            fr: {
+                'main-title': 'ThermaViX Viewer',
+                'main-subtitle': 'Logiciel de Bureau Professionnel pour l\'Analyse d\'Imagerie Thermique Haute Résolution',
+                'software-title': 'Logiciel d\'Imagerie Thermique Avancé',
+                'software-description': 'ThermaViX Viewer est une application de bureau puissante conçue pour fournir une analyse d\'images thermiques haute résolution avec une clarté supérieure par rapport aux écrans d\'appareils. Surveillez les variations thermiques en temps réel avec une précision professionnelle.',
+                'download-text': 'Télécharger Maintenant',
+                'version-text': 'Version',
+                'size-text': 'Taille du Fichier',
+                'platform-text': 'Plateforme',
+                'feature1-title': 'Affichage Haute Résolution',
+                'feature1-desc': 'Découvrez l\'imagerie thermique avec une clarté et des détails exceptionnels, bien supérieurs aux petits écrans d\'appareils. Parfait pour l\'analyse et la surveillance professionnelles.',
+                'feature2-title': 'Sauvegarder et Exporter',
+                'feature2-desc': 'Sauvegardez facilement les images thermiques et les vidéos. Exportez vos données dans plusieurs formats pour la documentation et l\'analyse ultérieure.',
+                'feature3-title': 'Génération de Rapports',
+                'feature3-desc': 'Générez des rapports complets avec les données d\'analyse thermique. Parfait pour la documentation médicale et les présentations professionnelles.',
+                'feature4-title': 'Surveillance en Temps Réel',
+                'feature4-desc': 'Surveillez les variations thermiques en temps réel avec des performances fluides et des lectures de température précises pour une analyse immédiate.',
+                'requirements-title': 'Configuration Système Requise',
+                'os-text': 'Système d\'Exploitation',
+                'processor-text': 'Processeur',
+                'memory-text': 'Mémoire',
+                'storage-text': 'Stockage'
+            }
+        };
+
+        function changeLanguage(lang) {
+            const translation = translations[lang];
+            
+            // Update text direction for Arabic
+            document.body.style.direction = lang === 'ar' ? 'rtl' : 'ltr';
+            
+            // Update all translatable elements
+            Object.keys(translation).forEach(key => {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.textContent = translation[key];
+                }
+            });
+        }
+
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.feature-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
