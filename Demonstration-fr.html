@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ThermaViX - Démonstration d'imagerie thermique médicale</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: #f7fafd;
+      color: #222;
+    }
+    .navbar {
+      background: #1a237e;
+    }
+    .navbar-brand, .nav-link, .navbar-nav .nav-link.active {
+      color: #fff !important;
+    }
+    .hero {
+      background: linear-gradient(120deg, #1976d2 70%, #e3f2fd 100%);
+      color: #fff;
+      padding: 70px 0 50px 0;
+      text-align: center;
+      border-radius: 0 0 40px 40px;
+      margin-bottom: 40px;
+    }
+    .hero .btn {
+      background: #fff;
+      color: #1976d2;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+    .hero .btn:hover {
+      background: #1565c0;
+      color: #fff;
+    }
+    .feature-icon {
+      font-size: 2.5rem;
+      color: #1976d2;
+      margin-bottom: 15px;
+    }
+    .section-title {
+      color: #1976d2;
+      font-weight: bold;
+      margin-bottom: 24px;
+    }
+    .demo-section, .video-section, .steps-section {
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 2px 8px rgba(228, 231, 236, 0.13);
+      padding: 32px 24px;
+      margin-bottom: 32px;
+    }
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      background: #f8f9fa;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px dashed #dee2e6;
+    }
+    .video-placeholder {
+      text-align: center;
+      color: #6c757d;
+    }
+    .step-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+      height: 100%;
+    }
+    .step-card:hover {
+      transform: translateY(-5px);
+    }
+    .step-number {
+      width: 50px;
+      height: 50px;
+      background: #1976d2;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .demo-stats {
+      background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+    .stat-item {
+      text-align: center;
+      color: #1976d2;
+    }
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    footer {
+      background: #1a237e;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0 10px 0;
+      margin-top: 40px;
+      border-radius: 30px 30px 0 0;
+    }
+    @media (max-width: 576px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg shadow">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index-fr.html">ThermaViX</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index-fr.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="features-fr.html">Fonctionnalités</a></li>
+          <li class="nav-item"><a class="nav-link" href="team-fr.html">L'équipe</a></li>
+          <li class="nav-item"><a class="nav-link" href="about-fr.html">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="software-fr.html">Le Logiciel</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact-fr.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" href="demonstration-fr.html">Démonstration</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              Langue
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="demonstration.html">العربية</a></li>
+              <li><a class="dropdown-item" href="demonstration-en.html">English</a></li>
+              <li><a class="dropdown-item" href="demonstration-fr.html">Français</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1 class="fw-bold mb-3">Voyez ThermaViX en action</h1>
+      <p class="mb-4">Découvrez le fonctionnement de l'appareil d'imagerie thermique ThermaViX avec son logiciel d'analyse dédié.</p>
+      <a href="#demo" class="btn btn-lg px-4">Démarrer la démo <i class="bi bi-play-circle ms-2"></i></a>
+    </div>
+  </section>
+
+  <section class="container demo-stats">
+    <div class="row text-center">
+      <div class="col-md-3 col-6">
+        <div class="stat-item">
+          <div class="stat-number">&lt; 30s</div>
+          <div class="stat-label">Durée de l'examen</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="stat-item">
+          <div class="stat-number">95%</div>
+          <div class="stat-label">Taux de précision</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="stat-item">
+          <div class="stat-number">0</div>
+          <div class="stat-label">Exposition aux radiations</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="stat-item">
+          <div class="stat-number">Inst.</div>
+          <div class="stat-label">Analyse</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="demo" class="container demo-section">
+    <h2 class="section-title">Démonstration de l'appareil ThermaViX</h2>
+    <p>
+      Découvrez une technologie d'imagerie thermique révolutionnaire qui transforme le diagnostic médical. Notre appareil intègre des capteurs infrarouges avancés à une analyse par IA pour fournir des évaluations de santé instantanées et non invasives.
+    </p>
+    <div class="video-container">
+      <div class="video-placeholder">
+        <i class="bi bi-play-circle" style="font-size: 4rem; color: #1976d2;"></i>
+        <h4 class="mt-3">Vidéo de démonstration interactive</h4>
+        <p>Cliquez pour voir comment ThermaViX fonctionne dans des scénarios médicaux réels.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container video-section">
+    <h2 class="section-title">Aperçu de l'interface logicielle</h2>
+    <p>
+      Voyez comment notre interface logicielle intuitive rend l'analyse thermographique accessible aux professionnels de la santé de tous niveaux. Les algorithmes d'IA fournissent des informations claires et exploitables en temps réel.
+    </p>
+    <div class="row">
+      <div class="col-md-6 mb-3 mb-md-0">
+        <div class="video-container" style="height: 300px;">
+          <div class="video-placeholder">
+            <i class="bi bi-laptop" style="font-size: 3rem; color: #1976d2;"></i>
+            <h5 class="mt-2">Démo du logiciel</h5>
+            <p>Visite de l'interface</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="video-container" style="height: 300px;">
+          <div class="video-placeholder">
+            <i class="bi bi-graph-up" style="font-size: 3rem; color: #1976d2;"></i>
+            <h5 class="mt-2">Résultats d'analyse</h5>
+            <p>Cartes thermiques instantanées</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container steps-section">
+    <h2 class="section-title text-center">Comment utiliser ThermaViX</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h5 class="fw-bold mb-3">Configuration & Calibrage</h5>
+          <p>Allumez l'appareil et attendez 2-3 minutes pour que le capteur thermique se calibre. Le logiciel détectera et se connectera automatiquement.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h5 class="fw-bold mb-3">Positionnement du patient</h5>
+          <p>Positionnez le patient à 0,5-1 mètre de l'appareil. Assurez-vous que la zone cible est découverte et sans vêtements ni accessoires.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h5 class="fw-bold mb-3">Balayage thermique</h5>
+          <p>Lancez le balayage depuis l'interface logicielle. L'appareil capture les données thermiques en temps réel, affichant instantanément les variations.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row g-4 mt-2">
+      <div class="col-md-4">
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h5 class="fw-bold mb-3">Analyse par IA</h5>
+          <p>Nos algorithmes analysent les schémas thermiques, identifiant les zones préoccupantes et les comparant aux plages de température normales.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="step-card">
+          <div class="step-number">5</div>
+          <h5 class="fw-bold mb-3">Examen des résultats</h5>
+          <p>Consultez le rapport d'analyse détaillé, avec cartes thermiques, relevés de température et informations de santé générées par l'IA.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="step-card">
+          <div class="step-number">6</div>
+          <h5 class="fw-bold mb-3">Génération de rapport</h5>
+          <p>Générez des rapports complets pour les dossiers médicaux, incluant images thermiques, données d'analyse et recommandations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container mb-5">
+    <div class="demo-section">
+      <h2 class="section-title text-center">Avantages clés en action</h2>
+      <div class="row text-center g-4">
+        <div class="col-md-3">
+          <div class="p-3">
+            <div class="feature-icon"><i class="bi bi-stopwatch"></i></div>
+            <h5 class="fw-bold mb-2">Diagnostic rapide</h5>
+            <p>Analyse thermique complète en moins de 30 secondes.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="p-3">
+            <div class="feature-icon"><i class="bi bi-shield-check"></i></div>
+            <h5 class="fw-bold mb-2">Non invasif</h5>
+            <p>Aucun contact physique ni exposition aux radiations requis.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="p-3">
+            <div class="feature-icon"><i class="bi bi-cpu"></i></div>
+            <h5 class="fw-bold mb-2">Piloté par l'IA</h5>
+            <p>Algorithmes avancés pour une reconnaissance précise des motifs.</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="p-3">
+            <div class="feature-icon"><i class="bi bi-file-earmark-medical"></i></div>
+            <h5 class="fw-bold mb-2">Rapports complets</h5>
+            <p>Analyse détaillée et documentation médicale.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="mb-2">
+        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-white me-3"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="text-white"><i class="bi bi-envelope-fill"></i></a>
+      </div>
+      <div>Tous droits réservés &copy; ThermaViX 2025</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
