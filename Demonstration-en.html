@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ThermaViX - Medical Thermal Imaging Demonstration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: #f7fafd;
+      color: #222;
+    }
+    .navbar {
+      background: #1a237e;
+    }
+    .navbar-brand, .nav-link, .navbar-nav .nav-link.active {
+      color: #fff !important;
+    }
+    .hero {
+      background: linear-gradient(120deg, #1976d2 70%, #e3f2fd 100%);
+      color: #fff;
+      padding: 70px 0 50px 0;
+      text-align: center;
+      border-radius: 0 0 40px 40px;
+      margin-bottom: 40px;
+    }
+    .hero .btn {
+      background: #fff;
+      color: #1976d2;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+    .hero .btn:hover {
+      background: #1565c0;
+      color: #fff;
+    }
+    .feature-icon {
+      font-size: 2.5rem;
+      color: #1976d2;
+      margin-bottom: 15px;
+    }
+    .section-title {
+      color: #1976d2;
+      font-weight: bold;
+      margin-bottom: 24px;
+    }
+    .demo-section, .video-section, .steps-section {
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 2px 8px rgba(228, 231, 236, 0.13);
+      padding: 32px 24px;
+      margin-bottom: 32px;
+    }
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      background: #f8f9fa;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px dashed #dee2e6;
+      overflow: hidden;
+    }
+    .video-container video,
+    .video-container iframe {
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(25, 118, 210, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: #000;
+      border: none;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .video-container video:hover,
+    .video-container iframe:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 35px rgba(25, 118, 210, 0.25);
+    }
+    .video-container video:focus,
+    .video-container iframe:focus {
+      outline: 3px solid #1976d2;
+      outline-offset: 3px;
+    }
+    .video-placeholder {
+      text-align: center;
+      color: #6c757d;
+    }
+    .step-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+      height: 100%;
+    }
+    .step-card:hover {
+      transform: translateY(-5px);
+    }
+    .step-number {
+      width: 50px;
+      height: 50px;
+      background: #1976d2;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .demo-stats {
+      background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+    .stat-item {
+      text-align: center;
+      color: #1976d2;
+    }
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    footer {
+      background: #1a237e;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0 10px 0;
+      margin-top: 40px;
+      border-radius: 30px 30px 0 0;
+    }
+    
+    /* Mobile improvements */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1.1rem;
+      }
+      .video-container {
+        height: 250px !important;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .video-container {
+        height: 200px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg shadow">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index-en.html">ThermaViX</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index-en.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="features-en.html">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="team-en.html">Team</a></li>
+          <li class="nav-item"><a class="nav-link" href="about-en.html">About ThermaViX</a></li>
+          <li class="nav-item"><a class="nav-link" href="software-en.html">Software</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact-en.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="demonstration-en.html">Demonstration</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              Language
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="demonstration.html">العربية</a></li>
+              <li><a class="dropdown-item" href="demonstration-en.html">English</a></li>
+              <li><a class="dropdown-item" href="demonstration-fr.html">Français</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1 class="fw-bold mb-3">See ThermaViX in Action</h1>
+      <p class="mb-4">Discover how the ThermaViX thermal imaging device works with its dedicated analysis software.</p>
+      <a href="#demo" class="btn btn-lg px-4"><i class="bi bi-play-circle me-2"></i>Start Demo</a>
+    </div>
+  </section>
+
+  <section class="container demo-stats">
+    <div class="row text-center">
+      <div class="col-md-3">
+        <div class="stat-item">
+          <div class="stat-number">< 30 sec</div>
+          <div class="stat-label">Scan Duration</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-item">
+          <div class="stat-number">95%</div>
+          <div class="stat-label">Accuracy Rate</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-item">
+          <div class="stat-number">0</div>
+          <div class="stat-label">Radiation Exposure</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-item">
+          <div class="stat-number">Instant</div>
+          <div class="stat-label">Analysis</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="demo" class="container demo-section">
+    <h2 class="section-title">ThermaViX Device Demonstration</h2>
+    <p>
+      Experience the revolutionary thermal imaging technology that's transforming medical diagnosis. Our device integrates advanced infrared sensors with AI-powered analysis to provide instant, non-invasive health assessments.
+    </p>
+    <div class="video-container">
+      <video 
+        controls 
+        width="100%" 
+        height="100%" 
+        preload="metadata">
+        <source src="https://github.com/ThermaViX/thermavix-website/releases/download/demo-video-v1/thermavix-demo.mp4" type="video/mp4">
+        <p>Your browser does not support video playback. <a href="https://github.com/ThermaViX/thermavix-website/releases/download/demo-video-v1/thermavix-demo.mp4" download>Click here to download the video</a></p>
+      </video>
+    </div>
+  </section>
+
+  <section class="container steps-section">
+    <h2 class="section-title text-center">How to Use ThermaViX</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h5 class="fw-bold mb-3">Setup & Calibration</h5>
+          <p>Power on the device and allow 2-3 minutes for thermal sensor calibration. The software will automatically detect and connect to the device.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h5 class="fw-bold mb-3">Patient Positioning</h5>
+          <p>Position the patient 0.5-1 meter from the device. Ensure the target area is exposed and free from clothing or accessories.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h5 class="fw-bold mb-3">Thermal Scanning</h5>
+          <p>Start the scan through the software interface. The device captures real-time thermal data, displaying temperature variations instantly.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row g-4 mt-2">
+      <div class="col-md-4">
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h5 class="fw-bold mb-3">Review Results</h5>
+          <p>Review the detailed analysis report, complete with thermal maps, temperature readings, and AI-generated health insights.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="step-card">
+          <div class="step-number">5</div>
+          <h5 class="fw-bold mb-3">Generate Report</h5>
+          <p>Create comprehensive reports for medical records, including thermal images, analysis data, and recommended follow-up actions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container mb-5">
+    <div class="demo-section">
+      <h2 class="section-title text-center">Key Benefits in Action</h2>
+      <div class="row text-center g-4">
+        <div class="col-md-3">
+          <div class="p-3">
+            <div class="feature-icon"><i class="bi bi-stopwatch"></i></div>
+            <h5 class="fw-bold mb-2">Fast Diagnosis</h5>
+            <p>Complete thermal analysis in under 30 seconds</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="p-3">
+            <div class="feature-icon"><i class="bi bi-shield-check"></i></div>
+            <h5 class="fw-bold mb-2">Non-Invasive</h5>
+            <p>No physical contact or radiation exposure required</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="p-3">
+            <div class="feature-icon"><i class="bi bi-cpu"></i></div>
+            <h5 class="fw-bold mb-2">AI-Powered</h5>
+            <p>Advanced machine learning for accurate analysis</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="p-3">
+            <div class="feature-icon"><i class="bi bi-file-earmark-medical"></i></div>
+            <h5 class="fw-bold mb-2">Comprehensive Reports</h5>
+            <p>Detailed analysis and medical documentation</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="mb-2">
+        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-white me-3"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="text-white"><i class="bi bi-envelope-fill"></i></a>
+      </div>
+      <div>All Rights Reserved &copy; ThermaViX 2025</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
